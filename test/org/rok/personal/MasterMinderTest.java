@@ -82,11 +82,38 @@ class MasterMinderTest {
     }
 
     @Test
-    void evaluateTest_TwoPegBothMatch_DifferentColor() {
+    void evaluateTest_TwoPegsBothMatch_DifferentColor() {
         int[] evaluateResult = MasterMinder.evaluate(new String[] {"blue", "red"},new String[] {"blue", "red"});
         assertNotNull(evaluateResult, "Return Something");
         assertEquals(evaluateResult.length, 2, "Returns two numbers");
         assertEquals(evaluateResult[0], 2, "everything well placed");
+        assertEquals(evaluateResult[1], 0, "Nothing well misplaced");
+    }
+
+    @Test
+    void evaluateTest_TwoPegsBothMatch_SameColor() {
+        int[] evaluateResult = MasterMinder.evaluate(new String[] {"blue", "blue"},new String[] {"blue", "blue"});
+        assertNotNull(evaluateResult, "Return Something");
+        assertEquals(evaluateResult.length, 2, "Returns two numbers");
+        assertEquals(evaluateResult[0], 2, "everything well placed");
+        assertEquals(evaluateResult[1], 0, "Nothing well misplaced");
+    }
+
+    @Test
+    void evaluateTest_ThreePegsMatch_SameColor() {
+        int[] evaluateResult = MasterMinder.evaluate(new String[] {"blue", "blue", "blue"},new String[] {"blue", "blue", "blue"});
+        assertNotNull(evaluateResult, "Return Something");
+        assertEquals(evaluateResult.length, 2, "Returns two numbers");
+        assertEquals(evaluateResult[0], 3, "everything well placed");
+        assertEquals(evaluateResult[1], 0, "Nothing well misplaced");
+    }
+
+    @Test
+    void evaluateTest_ThreePegsMatch_AllDifferentColors() {
+        int[] evaluateResult = MasterMinder.evaluate(new String[] {"blue", "red", "green"},new String[] {"blue", "red", "green"});
+        assertNotNull(evaluateResult, "Return Something");
+        assertEquals(evaluateResult.length, 2, "Returns two numbers");
+        assertEquals(evaluateResult[0], 3, "everything well placed");
         assertEquals(evaluateResult[1], 0, "Nothing well misplaced");
     }
 

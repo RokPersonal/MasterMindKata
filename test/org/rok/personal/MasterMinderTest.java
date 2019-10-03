@@ -65,29 +65,32 @@ class MasterMinderTest {
 
     @Test
     void evaluateTest_TestOnePegDoesNotMatch() {
+//        evaluate([blue], [red]) should return [0, 0]
         int[] evaluateResult = MasterMinder.evaluate(new String[] {"blue"},new String[] {"red"});
         assertNotNull(evaluateResult, "Return Something");
         assertEquals(evaluateResult.length, 2, "Returns two numbers");
-        assertEquals(evaluateResult[0], 0, "Nothing well placed");
-        assertEquals(evaluateResult[1], 0, "Nothing well misplaced");
+        assertEquals(evaluateResult[0], 0, "0 well placed");
+        assertEquals(evaluateResult[1], 0, "0 misplaced");
     }
 
     @Test
     void evaluateTest_OnePegDoesMatch() {
+//        evaluate([blue], [blue]) should return [1, 0]
         int[] evaluateResult = MasterMinder.evaluate(new String[] {"blue"},new String[] {"blue"});
         assertNotNull(evaluateResult, "Return Something");
         assertEquals(evaluateResult.length, 2, "Returns two numbers");
-        assertEquals(evaluateResult[0], 1, "everything well placed");
-        assertEquals(evaluateResult[1], 0, "Nothing well misplaced");
+        assertEquals(evaluateResult[0], 1, "1 well placed");
+        assertEquals(evaluateResult[1], 0, "0 misplaced");
     }
 
     @Test
     void evaluateTest_TwoPegsBothMatch_DifferentColor() {
+//        evaluate([red, yellow], [blue, red]) should return [0, 1]
         int[] evaluateResult = MasterMinder.evaluate(new String[] {"blue", "red"},new String[] {"blue", "red"});
         assertNotNull(evaluateResult, "Return Something");
         assertEquals(evaluateResult.length, 2, "Returns two numbers");
-        assertEquals(evaluateResult[0], 2, "everything well placed");
-        assertEquals(evaluateResult[1], 0, "Nothing well misplaced");
+        assertEquals(evaluateResult[0], 2, "2 well placed");
+        assertEquals(evaluateResult[1], 0, "0 misplaced");
     }
 
     @Test
@@ -95,8 +98,8 @@ class MasterMinderTest {
         int[] evaluateResult = MasterMinder.evaluate(new String[] {"blue", "blue"},new String[] {"blue", "blue"});
         assertNotNull(evaluateResult, "Return Something");
         assertEquals(evaluateResult.length, 2, "Returns two numbers");
-        assertEquals(evaluateResult[0], 2, "everything well placed");
-        assertEquals(evaluateResult[1], 0, "Nothing well misplaced");
+        assertEquals(evaluateResult[0], 2, "2 well placed");
+        assertEquals(evaluateResult[1], 0, "0 misplaced");
     }
 
     @Test
@@ -104,8 +107,8 @@ class MasterMinderTest {
         int[] evaluateResult = MasterMinder.evaluate(new String[] {"blue", "blue", "blue"},new String[] {"blue", "blue", "blue"});
         assertNotNull(evaluateResult, "Return Something");
         assertEquals(evaluateResult.length, 2, "Returns two numbers");
-        assertEquals(evaluateResult[0], 3, "everything well placed");
-        assertEquals(evaluateResult[1], 0, "Nothing well misplaced");
+        assertEquals(evaluateResult[0], 3, "3 well placed");
+        assertEquals(evaluateResult[1], 0, "0 misplaced");
     }
 
     @Test
@@ -113,8 +116,8 @@ class MasterMinderTest {
         int[] evaluateResult = MasterMinder.evaluate(new String[] {"blue", "red", "green"},new String[] {"blue", "red", "green"});
         assertNotNull(evaluateResult, "Return Something");
         assertEquals(evaluateResult.length, 2, "Returns two numbers");
-        assertEquals(evaluateResult[0], 3, "everything well placed");
-        assertEquals(evaluateResult[1], 0, "Nothing well misplaced");
+        assertEquals(evaluateResult[0], 3, "3 well placed");
+        assertEquals(evaluateResult[1], 0, "0 misplaced");
     }
 
     @Test
@@ -122,17 +125,9 @@ class MasterMinderTest {
         int[] evaluateResult = MasterMinder.evaluate(new String[] {"red", "yellow"},new String[] {"blue", "red"});
         assertNotNull(evaluateResult, "Return Something");
         assertEquals(evaluateResult.length, 2, "Returns two numbers");
-        assertEquals(evaluateResult[0], 1, "everything well placed");
-        assertEquals(evaluateResult[1], 0, "Nothing well misplaced");
+        assertEquals(evaluateResult[0], 0, "0 well placed");
+        assertEquals(evaluateResult[1], 1, "1 misplaced");
     }
-
-    @Test
-    void evaluateTest_ProvidedTests() {
-//        evaluate([blue], [red]) should return [0, 0]
-//        evaluate([blue], [blue]) should return [1, 0]
-//        evaluate([red, yellow], [blue, red]) should return [0, 1]
-        fail("We have not done anything yet");
-    }
-
+// TODO: Add in more tests
 
 }

@@ -82,6 +82,15 @@ class MasterMinderTest {
     }
 
     @Test
+    void evaluateTest_TwoPegBothMatch_DifferentColor() {
+        int[] evaluateResult = MasterMinder.evaluate(new String[] {"blue", "red"},new String[] {"blue", "red"});
+        assertNotNull(evaluateResult, "Return Something");
+        assertEquals(evaluateResult.length, 2, "Returns two numbers");
+        assertEquals(evaluateResult[0], 2, "everything well placed");
+        assertEquals(evaluateResult[1], 0, "Nothing well misplaced");
+    }
+
+    @Test
     void evaluateTest_TwoPegsOneMisplaced() {
         int[] evaluateResult = MasterMinder.evaluate(new String[] {"red", "yellow"},new String[] {"blue", "red"});
         assertNotNull(evaluateResult, "Return Something");
